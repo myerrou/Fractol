@@ -28,13 +28,14 @@ int	main(int ac, char **av)
 
 	if ((ac == 2 && (!ft_strncmp(av[1], "mandelbrot", 10) || !ft_strncmp(av[1],
 					"burningship", 11))) || (ac == 4 && !ft_strncmp(av[1],
-				"julia", 5) && s_check(av[2]) && s_check(av[3])))
+				"julia", 5) && s_check(av[2], 0) && s_check(av[3], 0)))
 	{
 		fcl.name = av[1];
 		mlx_func(&fcl);
 		if (!ft_strncmp(fcl.name, "mandelbrot", 10))
 			mandelbrot_set(&fcl);
-		else if (!ft_strncmp(fcl.name, "julia", 5) && ac == 4 && s_check(av[2]) && s_check(av[3]))
+		else if (!ft_strncmp(fcl.name, "julia", 5) && ac == 4 && s_check(av[2],
+				0) && s_check(av[3], 0))
 		{
 			fcl.cx = ft_atof(av[2], 0, 0);
 			fcl.cy = ft_atof(av[3], 0, 0);
@@ -46,5 +47,6 @@ int	main(int ac, char **av)
 		mlx_loop(fcl.mlx);
 	}
 	else
-		putstr_fd(ERR_MESS, 1);
+		putstr_fd("Error! Please enter [./Fractol] followed by :\n  [mandelbrot]\nor\n  [julia] [arg1] [arg2]\nor\n  [burningship] \n",
+			1);
 }

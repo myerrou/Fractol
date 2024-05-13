@@ -38,7 +38,6 @@ double	ft_atof(const char *str, long in, double frac)
 	return (s * (in + frac));
 }
 
-
 int	ft_strncmp(char *s1, char *s2, size_t n)
 {
 	size_t	i;
@@ -62,10 +61,8 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
-int	s_check(const char *str)
+int	s_check(const char *str, int i)
 {
-	int i = 0;
-
 	while (str[i] == ' ')
 		i++;
 	if (str[i] == '.' || !str[i])

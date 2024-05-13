@@ -2,12 +2,12 @@
 
 double	map_shifter(double value, double out_min, double out_max, double in_max)
 {
-	return (value * (out_max - out_min) / in_max) + out_min;
+	return ((value * (out_max - out_min) / in_max) + out_min);
 }
 
 double	colors(double value, double in_max, double out_min, double out_max)
 {
-	return (out_min - in_max) * (value) / out_max + in_max;
+	return ((out_min - in_max) * (value) / out_max + in_max);
 }
 
 void	my_pixel_put(t_fcl *fcl, int x, int y, int color)
@@ -37,8 +37,8 @@ void	my_pixel_check(int x, int y, t_fcl *fcl)
 	int	color;
 
 	i = 0;
-	while ((fcl->z.re * fcl->z.re + fcl->z.i
-			* fcl->z.i < 4) && i < fcl->iter_def)
+	while ((fcl->z.re * fcl->z.re + fcl->z.i * fcl->z.i < 4)
+		&& i < fcl->iter_def)
 	{
 		fcl->z = relation(fcl->z, fcl->c);
 		i++;

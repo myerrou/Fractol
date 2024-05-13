@@ -16,12 +16,7 @@ int	keys_handle(int button, t_fcl *fcl)
 		fcl->shift_y += (fcl->zoom / 2);
 	else if (button == 126)
 		fcl->shift_y -= (fcl->zoom / 2);
-	if (!ft_strncmp(fcl->name, "mandelbrot", 10))
-		mandelbrot_set(fcl);
-	else if (!ft_strncmp(fcl->name, "julia", 5))
-		julia_set(fcl);
-	else
-		burning_set(fcl);
+	sets_condition(fcl);
 	return (0);
 }
 
@@ -50,12 +45,7 @@ int	mouse_hook(int mousecode, int x, int y, t_fcl *fcl)
 		fcl->shift_x += old_x - new_x;
 		fcl->shift_y += old_y - new_y;
 	}
-	if (!ft_strncmp(fcl->name, "mandelbrot", 10))
-		mandelbrot_set(fcl);
-	else if (!ft_strncmp(fcl->name, "julia", 5))
-		julia_set(fcl);
-	else
-		burning_set(fcl);
+	sets_condition(fcl);
 	return (0);
 }
 
@@ -71,12 +61,7 @@ int	mouse_move(int x, int y, t_fcl *fcl)
 {
 	fcl->cx = map_shifter(x, -2, 2, WIDTH) * fcl->zoom;
 	fcl->cy = map_shifter(y, 2, -2, HEIGHT) * fcl->zoom;
-	if (!ft_strncmp(fcl->name, "julia", 5))
-		julia_set(fcl);
-	else if (!ft_strncmp(fcl->name, "mandelbrot", 10))
-		mandelbrot_set(fcl);
-	else
-		burning_set(fcl);
+	sets_condition(fcl);
 	return (0);
 }
 
@@ -87,8 +72,3 @@ int	close_esc(t_fcl *fcl)
 	exit(0);
 	return (0);
 }
-
-// int	button_handle(int button, t_fcl *fcl)
-// {
-// 	if (button == 49)
-// }

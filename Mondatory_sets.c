@@ -13,7 +13,7 @@ void	mandelbrot_set(t_fcl *fcl)
 		{
 			fcl->z.re = 0.0;
 			fcl->z.i = 0.0;
-			fcl->c.re = (map_shifter(x, -2, 2, WIDTH) * fcl->zoom) 
+			fcl->c.re = (map_shifter(x, -2, 2, WIDTH) * fcl->zoom)
 				+ fcl->shift_x;
 			fcl->c.i = (map_shifter(y, 2, -2, HEIGHT) * fcl->zoom)
 				+ fcl->shift_y;
@@ -27,8 +27,8 @@ void	mandelbrot_set(t_fcl *fcl)
 
 void	julia_set(t_fcl *fcl)
 {
-	int		x;
-	int		y;
+	int	x;
+	int	y;
 
 	x = 0;
 	while (x < WIDTH)
@@ -48,4 +48,14 @@ void	julia_set(t_fcl *fcl)
 		x++;
 	}
 	mlx_put_image_to_window(fcl->mlx, fcl->window, fcl->image.img_ptr, 0, 0);
+}
+
+void	sets_condition(t_fcl *fcl)
+{
+	if (!ft_strncmp(fcl->name, "julia", 5))
+		julia_set(fcl);
+	else if (!ft_strncmp(fcl->name, "mandelbrot", 10))
+		mandelbrot_set(fcl);
+	else
+		burning_set(fcl);
 }
