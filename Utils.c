@@ -1,4 +1,16 @@
-#include "Fractol.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: myerrou <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/14 16:03:18 by myerrou           #+#    #+#             */
+/*   Updated: 2024/05/14 16:03:21 by myerrou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fractol.h"
 
 void	putstr_fd(char *s, int fd)
 {
@@ -12,28 +24,31 @@ void	putstr_fd(char *s, int fd)
 		write(fd, &s[i], 1);
 		i++;
 	}
+	write(2, NC, 2);
 }
 
 double	ft_atof(const char *str, long in, double frac)
 {
 	double	nbr;
 	int		s;
+	int		i;
 
-	s = +1;
+	s = 1;
+	i = 0;
 	nbr = 1;
-	while ((*str >= 9 && *str <= 13) || *str == 32)
-		++str;
-	while ('+' == *str || '-' == *str)
-		if ('-' == *str++)
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	while (str[i] == '+' || str[i] == '-')
+		if (str[i++] == '-')
 			s = -s;
-	while (*str != '.' && *str)
-		in = (in * 10) + (*str++ - 48);
-	if (*str == '.')
-		++str;
-	while (*str)
+	while (str[i] != '.' && str[i])
+		in = (in * 10) + (str[i++] - 48);
+	if (str[i] == '.')
+		i++;
+	while (str[i])
 	{
 		nbr /= 10;
-		frac = frac + (*str++ - 48) * nbr;
+		frac = frac + (str[i++] - 48) * nbr;
 	}
 	return (s * (in + frac));
 }

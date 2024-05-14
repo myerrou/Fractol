@@ -1,4 +1,16 @@
-#include "Fractol.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fractol.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: myerrou <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/05/14 16:02:42 by myerrou           #+#    #+#             */
+/*   Updated: 2024/05/14 16:02:46 by myerrou          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "fractol.h"
 
 void	mlx_func(t_fcl *fcl)
 {
@@ -14,9 +26,7 @@ void	mlx_func(t_fcl *fcl)
 	}
 	fcl->window = mlx_new_window(fcl->mlx, WIDTH, HEIGHT, fcl->name);
 	if (!fcl->window)
-	{
 		mlx_destroy_window(fcl->mlx, fcl->window);
-	}
 	fcl->image.img_ptr = mlx_new_image(fcl->mlx, WIDTH, HEIGHT);
 	fcl->image.adress = mlx_get_data_addr(fcl->image.img_ptr, &fcl->image.bpp,
 			&fcl->image.line_len, &fcl->image.endian);
@@ -43,10 +53,9 @@ int	main(int ac, char **av)
 		}
 		else if (!ft_strncmp(fcl.name, "burningship", 11))
 			burning_set(&fcl);
-		hook_func(&fcl);
+		hooking_func(&fcl);
 		mlx_loop(fcl.mlx);
 	}
 	else
-		putstr_fd("Error! Please enter [./Fractol] followed by :\n  [mandelbrot]\nor\n  [julia] [arg1] [arg2]\nor\n  [burningship] \n",
-			1);
+		(putstr_fd(RC ERR_MESS1, 2), putstr_fd(RC ERR_MESS2, 2));
 }
