@@ -6,11 +6,11 @@
 /*   By: myerrou <myerrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:02:42 by myerrou           #+#    #+#             */
-/*   Updated: 2024/05/16 15:00:59 by myerrou          ###   ########.fr       */
+/*   Updated: 2024/05/16 15:07:25 by myerrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "Fractol.h"
 
 void	mlx_func(t_fcl *fcl)
 {

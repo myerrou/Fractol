@@ -6,11 +6,11 @@
 /*   By: myerrou <myerrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:02:29 by myerrou           #+#    #+#             */
-/*   Updated: 2024/05/16 15:00:57 by myerrou          ###   ########.fr       */
+/*   Updated: 2024/05/16 15:07:22 by myerrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "Fractol.h"
 
 int	keys_handle(int keycode, t_fcl *fcl)
 {

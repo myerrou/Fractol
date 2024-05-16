@@ -6,11 +6,11 @@
 /*   By: myerrou <myerrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:02:20 by myerrou           #+#    #+#             */
-/*   Updated: 2024/05/16 15:00:54 by myerrou          ###   ########.fr       */
+/*   Updated: 2024/05/16 15:07:20 by myerrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "Fractol.h"
 
 double	map_shifter(double value, double out_min, double out_max, double in_max)
 {

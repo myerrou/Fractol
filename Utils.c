@@ -6,11 +6,11 @@
 /*   By: myerrou <myerrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:03:18 by myerrou           #+#    #+#             */
-/*   Updated: 2024/05/16 15:01:09 by myerrou          ###   ########.fr       */
+/*   Updated: 2024/05/16 15:07:40 by myerrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "Fractol.h"
 
 void	putstr_fd(char *s, int fd)
 {

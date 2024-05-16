@@ -6,11 +6,11 @@
 /*   By: myerrou <myerrou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:03:09 by myerrou           #+#    #+#             */
-/*   Updated: 2024/05/16 15:01:06 by myerrou          ###   ########.fr       */
+/*   Updated: 2024/05/16 15:07:38 by myerrou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "Fractol.h"
 
 void	mandelbrot_set(t_fcl *fcl)
 {
